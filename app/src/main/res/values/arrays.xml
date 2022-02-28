@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="providers_array">
+        <item>Поставщик</item>
+        <item>АО "Мосэнергосбыт"</item>
+        <item>АО "МосОблЕИРЦ"</item>
+        <item>АО "Мосэнергосбыт" + ТКО</item>
+    </string-array>
+    <string-array name="relation_status_array">
+        <item>Статус отношения к ЛС</item>
+        <item>Собственник</item>
+        <item>Другое</item>
+        <item>Наниматель</item>
+        <item>Зарегестрированный</item>
+        <item>Проживает</item>
+    </string-array>
+    <string-array name="ask_question_provider_array">
+        <item>Поставщик услуг</item>
+        <item>АО "МосОблЕИРЦ"</item>
+        <item>АО "Мосэнергосбыт"</item>
+    </string-array>
+    <string-array name="services_catalog_amount_array">
+        <item>адресс проживания</item>
+    </string-array>
+    <string-array name="services_catalog_type_array">
+        <item>Все</item>
+        <item>Умные приборы учета</item>
+        <item>Электромонтажные работы</item>
+        <item>Дезинфекция, дезинсекция и чистка\nпомещений</item>
+        <item>Ремонт бытовой техники</item>
+        <item>Ремонт смартфонов</item>
+        <item>Сантехника</item>
+        <item>Установка/замена водосчётчиков "ОХТА",\n"Пульс", "ВСКМ", "НОРМА", "ЭКО НОМ"</item>
+        <item>Установка/замена водосчётчиков Itelma</item>
+    </string-array>
+    <string-array name="ordered_services_period_array">
+        <item>за последние 3 месяца</item>
+        <item>за последние 6 месяцев</item>
+        <item>за год</item>
+        <item>за три года</item>
+    </string-array>
+    <string-array name="ordered_services_amount_array">
+        <item>адресс проживания</item>
+    </string-array>
+</resources>

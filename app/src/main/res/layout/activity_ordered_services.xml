@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_ordered_services_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/activity_ordered_services_container_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Отобразить услуги"
+        android:textAllCaps="true"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/activity_ordered_services_container_amount_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Номер лицевого счета" />
+
+    <Spinner
+        android:id="@+id/activity_ordered_services_container_amount_number_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog" />
+
+    <TextView
+        android:id="@+id/activity_ordered_services_container_period_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Период" />
+
+    <Spinner
+        android:id="@+id/activity_ordered_services_container_period_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/activity_ordered_services_container_not_found_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="За последние 3 месяца заказанные услуги отсутствуют"
+        android:textAllCaps="true"
+        android:textStyle="bold" />
+</LinearLayout>

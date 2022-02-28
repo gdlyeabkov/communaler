@@ -20,33 +20,35 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/activity_transfer_container_header_aside_back_btn_wrap"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView12"
+                    android:id="@+id/activity_transfer_container_header_aside_back_btn"
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/add" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/activity_transfer_container_header_aside_company_logo_wrap"
                 android:layout_width="15dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView11"
+                    android:id="@+id/activity_transfer_container_header_aside_company_logo"
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/amount" />
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/activity_transfer_container_header_aside_amount_number_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"

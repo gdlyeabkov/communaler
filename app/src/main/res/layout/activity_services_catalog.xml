@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_services_catalog_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/activity_services_catalog_container_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Отобразить услуги"
+        android:textAllCaps="true"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/activity_services_catalog_container_amount_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Номер лицевого счета" />
+
+    <Spinner
+        android:id="@+id/activity_services_catalog_container_amount_number_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/activity_services_catalog_container_type_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Вид услуги" />
+
+    <Spinner
+        android:id="@+id/activity_services_catalog_container_type_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+</LinearLayout>
