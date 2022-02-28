@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/activity_main_container_welcome_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Добро пожаловать!"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+    <EditText
+        android:id="@+id/activity_main_container_login_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="E-mail или телефон"
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/activity_main_container_login_errors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Введите E-mail или телефон"
+        android:textColor="#FF0000"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/activity_main_container_password_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Пароль"
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/activity_main_container_password_errors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Введите пароль"
+        android:textColor="#FF0000"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/activity_main_container_forgot_password_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Забыли пароль?"
+        android:textColor="#567ED1" />
+
+    <Button
+        android:id="@+id/activity_main_container_login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFC107"
+        android:text="Войти" />
+
+    <TextView
+        android:id="@+id/activity_main_container_login_alt_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="------------------------------\tили\t-------------------------------"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/activity_main_container_login_driven_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        android:outlineProvider="none"
+        android:text="Войти через"
+        android:textColor="#FF0000"
+        app:icon="@drawable/bubble"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="24sp"
+        app:iconTint="#FF0000"
+        app:strokeColor="#FF0000"
+        app:strokeWidth="2sp" />
+
+    <LinearLayout
+        android:id="@+id/activity_main_container_not_account_row"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/activity_main_container_not_account_row_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="У вас еще нет аккаунта" />
+
+        <TextView
+            android:id="@+id/activity_main_container_not_account_row_register_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Зарегестрируйтесь"
+            android:textAlignment="textEnd"
+            android:textColor="#567ED1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activity_main_container_help_row"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/activity_main_container_help_row_contacts"
+            android:layout_width="205dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/activity_main_container_help_row_contacts_img_wrap"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/activity_main_container_help_row_contacts_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/location" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/activity_main_container_help_row_contacts_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:text="Контакты"
+                android:textColor="#567ED1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/activity_main_container_help_row_support"
+            android:layout_width="205dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/activity_main_container_help_row_support_img_wrap"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/activity_main_container_help_row_support_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/help" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/activity_main_container_help_row_support_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:text="Техподдержка"
+                android:textColor="#567ED1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/activity_main_container_sites_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Официальные сайты"
+        android:textAlignment="center"
+        android:textColor="#567ED1" />
+</LinearLayout>

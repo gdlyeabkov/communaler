@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main_page_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/activity_main_page_container_amounts"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:tabIndicatorColor="#00FFFFFF">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/add"
+            android:maxWidth="25dp"
+            android:minWidth="25dp" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/amount"
+            android:text="01234567" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <LinearLayout
+        android:id="@+id/activity_main_page_container_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E1E1E1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/activity_main_page_container_body_address"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/activity_main_page_container_body_address_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:text="Адресс проживания" />
+
+            <LinearLayout
+                android:id="@+id/activity_main_page_container_body_address_icon_wrap"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/activity_main_page_container_body_address_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/info" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/activity_main_page_container_body_debt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Задолженность отсутствует"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/activity_main_page_container_body_cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3,88 Р"
+            android:textAlignment="center"
+            android:textColor="#4CAF50"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/activity_main_page_container_body_more_btn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="125dp"
+            android:backgroundTint="#BAB1B1"
+            android:text="Еще"
+            android:textColor="#000000"
+            app:cornerRadius="100dp" />
+
+        <Button
+            android:id="@+id/activity_main_page_container_body_notifications_btn"
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:backgroundTint="#FFC107"
+            android:text="Важные уведомления"
+            app:icon="@drawable/attention"
+            app:iconSize="36sp" />
+
+        <LinearLayout
+            android:id="@+id/activity_main_page_container_body_actions"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/activity_main_page_container_body_actions_pay"
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/activity_main_page_container_body_actions_pay_icon_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/activity_main_page_container_body_actions_pay_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/card" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/activity_main_page_container_body_actions_pay_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ОПЛАТИТЬ\nБЕЗ"
+                    android:textAlignment="center"
+                    android:textColor="#2196F3" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/activity_main_page_container_body_actions_divider"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/purple_500" />
+
+            <LinearLayout
+                android:id="@+id/activity_main_page_container_body_actions_transfer"
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/activity_main_page_container_body_actions_transfer_icon_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/activity_main_page_container_body_actions_transfer_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/counter" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/activity_main_page_container_body_actions_transfer_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ПЕРАДАТЬ\nПОКАЗАНИЯ"
+                    android:textAlignment="center"
+                    android:textColor="#2196F3" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
