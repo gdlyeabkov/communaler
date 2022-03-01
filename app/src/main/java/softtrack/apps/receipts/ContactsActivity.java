@@ -1,8 +1,12 @@
 package softtrack.apps.receipts;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;
 
 public class ContactsActivity extends AppCompatActivity {
@@ -70,8 +75,19 @@ public class ContactsActivity extends AppCompatActivity {
     }
 
     public void showContactsChooser() {
-        Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
-        startActivityForResult(intent, 0);
+        BottomSheetDialog alert = new BottomSheetDialog(ContactsActivity.this);
+        alert.setContentView(R.layout.activity_contacts_call_dialog);
+        alert.setTitle("Сообщение");
+        alert.show();
+        alert.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+//                Intent intent = new Intent(Intent.ACTION_DIAL, ContactsContract.Contacts.CONTENT_URI);
+                Uri u = Uri.parse("tel:" + "84995509550");
+                Intent intent = new Intent(Intent.ACTION_DIAL, u);
+                startActivityForResult(intent, 0);
+            }
+        });
     }
 
 }

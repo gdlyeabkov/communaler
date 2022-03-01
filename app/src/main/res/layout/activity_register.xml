@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/activity_register_container_email_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/activity_register_container_phone_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Мобильный телефон"
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/activity_register_container_passwordl_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Придумайте пароль"
+        android:inputType="textPersonName|textPassword"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/activity_register_container_confirm_password_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Повторите пароль"
+        android:inputType="textPersonName|textPassword"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/activity_register_container_name_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Имя пользователя"
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <LinearLayout
+        android:id="@+id/activity_register_container_subscription"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/activity_register_container_subscription_aside"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/activity_register_container_subscription_aside_first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Даю согласие на полечение рассылок\nрекламно-информационного характера" />
+
+            <TextView
+                android:id="@+id/activity_register_container_subscription_aside_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Без согласия на рекламу Вы упускаете\nнаши выгодные предложения"
+                android:textColor="#FF0000" />
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/activity_register_container_subscription_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_weight="1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/activity_register_container_help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text='Нажимая кнопку \"Далее\" Вы принимаете\nПользовательское соглешение и даете\nна обработку персональных данных' />
+
+    <TextView
+        android:id="@+id/activity_register_container_next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Далее"
+        android:textAlignment="textEnd"
+        android:textAllCaps="true"
+        android:textColor="#FF9800" />
+
+</LinearLayout>

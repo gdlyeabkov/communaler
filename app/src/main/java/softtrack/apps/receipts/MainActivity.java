@@ -50,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
     public void initialize() {
         db = openOrCreateDatabase("communaler.db", SQLiteDatabase.CREATE_IF_NECESSARY, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS amounts (_id INTEGER PRIMARY KEY AUTOINCREMENT, provider TEXT, number TEXT, status TEXT, email INTEGER, datetime TEXT, cost INTEGER, user INTEGER);");
-        db.execSQL("CREATE TABLE IF NOT EXISTS users (_id INTEGER PRIMARY KEY AUTOINCREMENT, login TEXT, password TEXT, address TEXT);");
+//        db.execSQL("CREATE TABLE IF NOT EXISTS users (_id INTEGER PRIMARY KEY AUTOINCREMENT, login TEXT, password TEXT, address TEXT);");
+//        db.execSQL("CREATE TABLE IF NOT EXISTS users (_id INTEGER PRIMARY KEY AUTOINCREMENT, login TEXT, password TEXT, address TEXT, phone TEXT, name TEXT, email INTEGER);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS users (_id INTEGER PRIMARY KEY AUTOINCREMENT, login TEXT, password TEXT, address TEXT, phone TEXT, name TEXT, email INTEGER, gender TEXT, firstname TEXT, secondname TEXT, thirdname TEXT, born TEXT);");
         activityMainContainerLoginBtn = findViewById(R.id.activity_main_container_login_btn);
         activityMainContainerLoginField = findViewById(R.id.activity_main_container_login_field);
         activityMainContainerLoginErrors = findViewById(R.id.activity_main_container_login_errors);
@@ -106,13 +108,27 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, PersonalAreaActivity.class);
                     intent.putExtra("userId", userId);
                     MainActivity.this.startActivity(intent);
+                } else if (isNotErrors) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    LayoutInflater inflater = getLayoutInflater();
+                    builder.setMessage("Неверно введен логин или пароль.\nПроверьте правильность ввода и\nповторите попытку.\nОбращаем Ваше внимание, что\nавторизоваться по номеру лицевого\nсчета теперь нельзя. Для входа в\nновый Личный кабинетиспользуйте\nВаш номер телефона\nили e-mail в качестве логина и ранее\nиспользуемый Вами пароль.");
+                    builder.setCancelable(true);
+                    builder.setPositiveButton("ОК", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    });
+                    AlertDialog alert = builder.create();
+                    alert.setTitle("Сообщение");
+                    alert.show();
                 }
             }
         });
         activityMainContainerNotAccountRowRegisterLabel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+/*                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 LayoutInflater inflater = getLayoutInflater();
                 View dialogView = inflater.inflate(R.layout.activity_register_dialog, null);
                 builder.setView(dialogView);
@@ -146,7 +162,9 @@ public class MainActivity extends AppCompatActivity {
                 });
                 AlertDialog alert = builder.create();
                 alert.setTitle("Регистрация");
-                alert.show();
+                alert.show();*/
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                MainActivity.this.startActivity(intent);
             }
         });
         activityMainContainerLoginDrivenLabel.setOnClickListener(new View.OnClickListener() {

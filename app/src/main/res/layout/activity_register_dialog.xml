@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Пароль"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textPassword"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
