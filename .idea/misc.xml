@@ -4,17 +4,23 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidSDK/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.264" />
+        <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/acivity_register_dialog.xml" value="0.264" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_add_amount.xml" value="0.264" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_ask_question.xml" value="0.13020833333333334" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_chat.xml" value="0.264" />
+        <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_contacts.xml" value="0.2" />
+        <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_contacts_list.xml" value="0.34916201117318435" />
+        <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_contacts_map.xml" value="0.13020833333333334" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_history.xml" value="0.13020833333333334" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_main_page.xml" value="0.264" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_more.xml" value="0.264" />
+        <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_official_sites_dialog.xml" value="0.264" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_ordered_services.xml" value="0.264" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_pay.xml" value="0.13020833333333334" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_personal_area.xml" value="0.16" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_questions.xml" value="0.264" />
+        <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_register_dialog.xml" value="0.13020833333333334" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_services.xml" value="0.34916201117318435" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_services_catalog.xml" value="0.43771626297577854" />
         <entry key="..\:/android_projects/Receipts/app/src/main/res/layout/activity_transfer.xml" value="0.2" />

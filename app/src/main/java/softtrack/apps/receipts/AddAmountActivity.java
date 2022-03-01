@@ -25,6 +25,7 @@ public class AddAmountActivity extends AppCompatActivity {
     public Spinner activityAddAmountContainerRelationStatusField;
     public Button activityAddAmountContainerAddBtn;
     public Switch activityAddAmountContainerReceiveAmountsDrivenEmailSwitch;
+    public int userId;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +38,11 @@ public class AddAmountActivity extends AppCompatActivity {
 
     @SuppressLint("WrongConstant")
     public void initialize() {
+
+        Intent myIntent = getIntent();
+        Bundle extras = myIntent.getExtras();
+        userId = extras.getInt("userId");
+
         db = openOrCreateDatabase("communaler.db", SQLiteDatabase.CREATE_IF_NECESSARY, null);
         activityAddAmountContainerProviderField = findViewById(R.id.activity_add_amount_container_provider_field);
         activityAddAmountContainerAmountNumberField = findViewById(R.id.activity_add_amount_container_amount_number_field);
@@ -94,9 +100,9 @@ public class AddAmountActivity extends AppCompatActivity {
                 int rawIsReceiveEmail = isReceiveEmail ? 1 : 0;
                 CharSequence rawAmountNumber = activityAddAmountContainerAmountNumberField.getText();
                 String amountNumber = rawAmountNumber.toString();
-//                db.execSQL("INSERT INTO \"amounts\"(provider, number, status, email, datetime) VALUES (\"" + providerName + "\", \"" + amountNumber + "\", \"" + statusName + "\", " + rawIsReceiveEmail + ", \"" + amountDate + "\");");
-                db.execSQL("INSERT INTO \"amounts\"(provider, number, status, email, datetime, cost, user) VALUES (\"" + providerName + "\", \"" + amountNumber + "\", \"" + statusName + "\", " + rawIsReceiveEmail + ", \"" + amountDate + "\", " + new Random().nextInt() + ", " + 1 + ");");
+                db.execSQL("INSERT INTO \"amounts\"(provider, number, status, email, datetime, cost, user) VALUES (\"" + providerName + "\", \"" + amountNumber + "\", \"" + statusName + "\", " + rawIsReceiveEmail + ", \"" + amountDate + "\", " + new Random().nextInt() + ", " + userId + ");");
                 Intent intent = new Intent(AddAmountActivity.this, PersonalAreaActivity.class);
+                intent.putExtra("userId", userId);
                 AddAmountActivity.this.startActivity(intent);
             }
         });

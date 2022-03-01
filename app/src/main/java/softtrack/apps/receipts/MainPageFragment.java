@@ -100,9 +100,12 @@ public class MainPageFragment extends Fragment {
                 activityMainPageContainerAmounts.removeTabAt(i);
             }
         }
-        Cursor amountsCursor = db.rawQuery("Select * from amounts", null);
+//        Cursor amountsCursor = db.rawQuery("Select * from amounts", null);
+        int userId = parentActivity.gateway.userId;
+        Cursor amountsCursor = db.rawQuery("Select * from amounts where user=" + userId, null);
         amountsCursor.moveToFirst();
-        long amounsCount = DatabaseUtils.queryNumEntries(db, "amounts");
+//        long amounsCount = DatabaseUtils.queryNumEntries(db, "amounts");
+        long amounsCount = amountsCursor.getCount();
         boolean isHaveAmounts = amounsCount >= 1;
         if (isHaveAmounts) {
             activityMinPageContainerBodyNotFoundAmountsLabel.setVisibility(unvisible);
@@ -143,6 +146,7 @@ public class MainPageFragment extends Fragment {
         boolean isAddAmount = tabPosition == 0;
         if (isAddAmount) {
             Intent intent = new Intent(parentActivity, AddAmountActivity.class);
+            intent.putExtra("userId", parentActivity.gateway.userId);
             parentActivity.startActivity(intent);
         } else {
             CharSequence amountData = tab.getContentDescription();

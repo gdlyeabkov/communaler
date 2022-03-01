@@ -42,4 +42,9 @@
     <string-array name="ordered_services_amount_array">
         <item>адресс проживания</item>
     </string-array>
+    <string-array name="contacts_list_provider_array">
+        <item>Поставщик услуг</item>
+        <item>АО "МосОблЕИРЦ"</item>
+        <item>АО "Мосэнергосбыт"</item>
+    </string-array>
 </resources>
