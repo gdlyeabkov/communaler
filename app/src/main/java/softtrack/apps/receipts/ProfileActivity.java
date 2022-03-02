@@ -113,6 +113,7 @@ public class ProfileActivity extends AppCompatActivity {
                 ProfileActivity.this.startActivity(intent);
             }
         });
+        getSupportActionBar().setTitle("Профиль");
     }
 
 }

@@ -17,7 +17,7 @@ public class ProfileContactsActivity extends AppCompatActivity {
     }
 
     public void initialize() {
-
+        getSupportActionBar().setTitle("Контакты");
     }
 
 }

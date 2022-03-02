@@ -18,7 +18,7 @@ public class MoreFragment extends Fragment {
     public PersonalAreaActivity parentActivity;
     public LinearLayout activityMoreContainerProfile;
     public LinearLayout activityMoreContainerContacts;
-    public LinearLayout activityMoreContainerPaymentsAndServices;
+    public LinearLayout activityMoreContainerPaymentsAndTransfers;
     public int userId = 0;
 
     public MoreFragment() {
@@ -46,7 +46,7 @@ public class MoreFragment extends Fragment {
         userId = parentActivity.gateway.userId;
         activityMoreContainerProfile = parentActivity.findViewById(R.id.activity_more_container_profile);
         activityMoreContainerContacts = parentActivity.findViewById(R.id.activity_more_container_contacts);
-        activityMoreContainerPaymentsAndServices = parentActivity.findViewById(R.id.activity_more_container_payments_and_services);
+        activityMoreContainerPaymentsAndTransfers = parentActivity.findViewById(R.id.activity_more_container_payments_and_services);
         activityMoreContainerProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,10 +63,10 @@ public class MoreFragment extends Fragment {
                 parentActivity.startActivity(intent);
             }
         });
-        activityMoreContainerPaymentsAndServices.setOnClickListener(new View.OnClickListener() {
+        activityMoreContainerPaymentsAndTransfers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(parentActivity, ContactsActivity.class);
+                Intent intent = new Intent(parentActivity, PaymentsAndTransfersActivity.class);
                 intent.putExtra("userId", userId);
                 parentActivity.startActivity(intent);
             }

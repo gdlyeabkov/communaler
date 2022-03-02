@@ -5,19 +5,19 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ProfileAccountsActivity extends AppCompatActivity {
+public class PromocodeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_accounts);
+        setContentView(R.layout.activity_promocode);
 
         initialize();
 
     }
 
     public void initialize() {
-        getSupportActionBar().setTitle("Связанные аккаунты");
+        getSupportActionBar().setTitle("Промокод");
     }
 
 }

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_payment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/activity_payment_container_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Адресс проживания" />
+
+    <TextView
+        android:id="@+id/activity_payment_container_total_cost_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Итого к оплате"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/activity_payment_container_total_cost_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/activity_payment_container_payment_method"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Выберите способ оплаты"
+        android:textAlignment="center" />
+
+    <LinearLayout
+        android:id="@+id/activity_payment_container_google_pay"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitStart"
+                app:srcCompat="@drawable/google_pay" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="Google Pay"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activity_payment_container_credit_card"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="375dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView35"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/smart_card" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="Банковской картой"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:orientation="vertical"></LinearLayout>
+
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/activity_payment_container_insurance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Добровольное страхование: 95,00 руб."
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Switch
+        android:id="@+id/activity_payment_container_agreement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Я согласен с правами оплаты"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/activity_payment_container_cards_detail_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Подробнее"
+        android:textAlignment="center"
+        android:textColor="#2196F3" />
+
+    <TextView
+        android:id="@+id/activity_payment_container_cards_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="К оплате принимаются"
+        android:textAlignment="center" />
+
+    <LinearLayout
+        android:id="@+id/activity_payment_container_cards"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/visa" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/mastercard" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/card" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activity_payment_container_cashback"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#ABB6FA"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Кешбэк 1 % при оплате картой"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView53"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Зарегестрируйте карту один раз в Программе\nлояльности для держателей карт до совершения\nоплаты и получайте кешбэк после каждого платежа" />
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView33"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/chevron_right"
+                    app:tint="#FF0000" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView51"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Подробнее"
+            android:textAllCaps="true"
+            android:textColor="#3F51B5" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/activity_payment_container_pay_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF9800"
+        android:padding="10dp"
+        android:text="Оплатить"
+        android:textColor="#FFFFFF" />
+</LinearLayout>

@@ -17,7 +17,7 @@ public class ProfileSecurityActivity extends AppCompatActivity {
     }
 
     public void initialize() {
-
+        getSupportActionBar().setTitle("Безопасность");
     }
 
 }

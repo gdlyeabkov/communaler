@@ -222,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
                 composeEmail(addresses, subject);
             }
         });
+        getSupportActionBar().hide();
     }
 
     public void openSite(String url) {

@@ -54,10 +54,20 @@
         android:layout_height="wrap_content"
         android:text="Дата рождения" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@android:drawable/btn_dropdown"
+        android:text="Button"
+        android:visibility="gone" />
+
     <Spinner
         android:id="@+id/activity_profile_data_container_born"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:dropDownWidth="0dp"
+        android:saveEnabled="false"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
@@ -73,13 +83,13 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/activity_profile_data_container_gender_male"
             android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:text="Мужской" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/activity_profile_data_container_gender_female"
             android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:text="Женский" />

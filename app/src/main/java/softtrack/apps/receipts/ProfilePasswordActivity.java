@@ -1,11 +1,14 @@
 package softtrack.apps.receipts;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,7 +61,14 @@ public class ProfilePasswordActivity extends AppCompatActivity {
                 String activityProfilePasswordContainerConfirmPasswordContent = rawActivityProfilePasswordContainerConfirmPasswordContent.toString();
                 boolean isOldPasswordMatches = activityProfilePasswordContainerCurrentPasswordContent.contains(password) && password.contains(activityProfilePasswordContainerCurrentPasswordContent);
                 boolean isNewPasswordsMatches = activityProfilePasswordContainerNewPasswordContent.contains(activityProfilePasswordContainerConfirmPasswordContent) && activityProfilePasswordContainerConfirmPasswordContent.contains(activityProfilePasswordContainerNewPasswordContent);
-                boolean isCanUpdatePassword = isOldPasswordMatches && isNewPasswordsMatches;
+                int activityProfilePasswordContainerConfirmPasswordContentLength = activityProfilePasswordContainerConfirmPasswordContent.length();
+                boolean isActivityProfilePasswordContainerConfirmPasswordFilled = activityProfilePasswordContainerConfirmPasswordContentLength >= 1;
+                int activityProfilePasswordContainerNewPasswordContentLength = activityProfilePasswordContainerNewPasswordContent.length();
+                boolean isActivityProfilePasswordContainerNewPasswordFilled = activityProfilePasswordContainerNewPasswordContentLength >= 1;
+                int activityProfilePasswordContainerCurrentPasswordContentLength = activityProfilePasswordContainerCurrentPasswordContent.length();
+                boolean isActivityProfilePasswordContainerCurrentPasswordFilled = activityProfilePasswordContainerCurrentPasswordContentLength >= 1;
+                boolean isFieldsFilled = isActivityProfilePasswordContainerConfirmPasswordFilled && isActivityProfilePasswordContainerNewPasswordFilled && isActivityProfilePasswordContainerCurrentPasswordFilled;
+                boolean isCanUpdatePassword = isOldPasswordMatches && isNewPasswordsMatches && isFieldsFilled;
                 if (isCanUpdatePassword) {
                     ContentValues contentValues = new ContentValues();
                     contentValues.put("password", activityProfilePasswordContainerNewPasswordContent);
@@ -67,10 +77,47 @@ public class ProfilePasswordActivity extends AppCompatActivity {
                     intent.putExtra("userId", userId);
                     ProfilePasswordActivity.this.startActivity(intent);
                 } else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ProfilePasswordActivity.this);
+                    LayoutInflater inflater = getLayoutInflater();
+                    builder.setTitle("Сообщение");
+                    String msg = "";
+                    boolean isOldPasswordNotMatches = !isOldPasswordMatches;
+                    if (isOldPasswordNotMatches) {
+                        msg += "Поле \"Текущий пароль\" не правильно.\n";
+                    }
+                    boolean isNewPasswordsNotMatches = !isNewPasswordsMatches;
+                    if (isNewPasswordsNotMatches) {
+                        msg += "Поля \"Новый пароль\" и  \"Повторите пароль\" не совпадают.\n";
+                    }
+                    boolean isFieldsNotFilled = !isFieldsFilled;
+                    if (isFieldsNotFilled) {
+                        boolean isCurrentPasswordNotFilled = !isActivityProfilePasswordContainerCurrentPasswordFilled;
+                        if (isCurrentPasswordNotFilled) {
+                            msg += "Поля \"Текущий пароль\" не заполнено.\n";
+                        }
+                        boolean isNewPasswordNotFilled = !isActivityProfilePasswordContainerNewPasswordFilled;
+                        if (isNewPasswordNotFilled) {
+                            msg += "Поля \"Новый пароль\" не заполнено.\n";
+                        }
+                        boolean isConfirmPasswordNotFilled = !isActivityProfilePasswordContainerConfirmPasswordFilled;
+                        if (isConfirmPasswordNotFilled) {
+                            msg += "Поля \"Повторите пароль\" не заполнено.\n";
+                        }
+                    }
+                    builder.setMessage(msg);
+                    builder.setCancelable(true);
+                    builder.setPositiveButton("ОК", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
 
+                        }
+                    });
+                    AlertDialog alert = builder.create();
+                    alert.show();
                 }
             }
         });
+        getSupportActionBar().setTitle("Изменить пароль");
     }
 
 }

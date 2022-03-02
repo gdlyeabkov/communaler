@@ -1,7 +1,11 @@
 package softtrack.apps.receipts;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -67,5 +71,23 @@ public class ServicesFragment extends Fragment {
             }
         });
     }
+
+/*    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.activity_services_actions, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+        boolean isSaveMenuItem = itemId == R.id.activity_services_actions_promocode;
+        if (isSaveMenuItem) {
+            Intent intent = new Intent(parentActivity, PromocodeActivity.class);
+            parentActivity.startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }*/
 
 }

@@ -21,6 +21,7 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainPageFragment extends Fragment {
 
+    public LinearLayout activityMainPageContainerBodyActionsPay;
     public LinearLayout activityMainPageContainerBodyActionsTransfer;
     public TabLayout activityMainPageContainerAmounts;
     public PersonalAreaActivity parentActivity;
@@ -55,6 +56,7 @@ public class MainPageFragment extends Fragment {
     public void initialize() {
         parentActivity = (PersonalAreaActivity) getActivity();
         db = parentActivity.openOrCreateDatabase("communaler.db", SQLiteDatabase.CREATE_IF_NECESSARY, null);
+        activityMainPageContainerBodyActionsPay = parentActivity.findViewById(R.id.activity_main_page_container_body_actions_pay);
         activityMainPageContainerBodyActionsTransfer = parentActivity.findViewById(R.id.activity_main_page_container_body_actions_transfer);
         activityMainPageContainerAmounts = parentActivity.findViewById(R.id.activity_main_page_container_amounts);
         activityMainPageContainerBodyAmount = parentActivity.findViewById(R.id.activity_main_page_container_body_amount);
@@ -63,6 +65,21 @@ public class MainPageFragment extends Fragment {
         activityMainPageContainerBodyCost = parentActivity.findViewById(R.id.activity_main_page_container_body_cost);
         visible = View.VISIBLE;
         unvisible = View.GONE;
+        activityMainPageContainerBodyActionsPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int selectedTabIndex = activityMainPageContainerAmounts.getSelectedTabPosition();
+                TabLayout.Tab selectedAmount = activityMainPageContainerAmounts.getTabAt(selectedTabIndex);
+                CharSequence amountData = selectedAmount.getContentDescription();
+                String rawAmountId = amountData.toString();
+                int amountId = Integer.valueOf(rawAmountId);
+                Intent intent = new Intent(parentActivity, PaymentActivity.class);
+                int userId = parentActivity.gateway.userId;
+                intent.putExtra("userId", userId);
+                intent.putExtra("amountId", amountId);
+                parentActivity.startActivity(intent);
+            }
+        });
         activityMainPageContainerBodyActionsTransfer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

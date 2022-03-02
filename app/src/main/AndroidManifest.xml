@@ -88,6 +88,18 @@
             android:name=".ProfileSubsActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".PromocodeActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".PaymentsAndTransfersActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
