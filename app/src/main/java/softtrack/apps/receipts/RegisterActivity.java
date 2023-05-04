@@ -84,7 +84,6 @@ public class RegisterActivity extends AppCompatActivity {
                 boolean isFieldsFilled = loginFieldContent.length() >= 1 && phoneFieldContent.length() >= 1 && passwordFieldContent.length() >= 1 && confirmPasswordFieldContent.length() >= 1 && nameFieldContent.length() >= 1;
                 boolean isCanRegister = isPaswordCompared && isFieldsFilled;
                 if (isCanRegister) {
-//                    db.execSQL("INSERT INTO \"users\"(login, password, address, phone, name, email) VALUES (\"" + loginFieldContent + "\", \"" + passwordFieldContent + "\", \"\", \"" + phoneFieldContent + "\", \"" + nameFieldContent + "\", " + rawIsEmailSubscription + ");");
                     db.execSQL("INSERT INTO \"users\"(login, password, address, phone, name, email, gender, firstname, secondname, thirdname, born) VALUES (\"" + loginFieldContent + "\", \"" + passwordFieldContent + "\", \"\", \"" + phoneFieldContent + "\", \"" + nameFieldContent + "\", " + rawIsEmailSubscription + ", \"\", \"\", \"\", \"\", \"\");");
                     Cursor usersCursor = db.rawQuery("Select * from users", null);
                     usersCursor.moveToLast();

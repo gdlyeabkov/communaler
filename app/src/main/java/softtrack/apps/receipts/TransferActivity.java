@@ -63,7 +63,6 @@ public class TransferActivity extends AppCompatActivity {
         activityTransferContainerHeaderFlashImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // ActivityCompat.requestPermissions(TransferActivity.this, new String[]{ Manifest.permission.FLASHLIGHT }, PackageManager.PERMISSION_GRANTED);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     CameraManager camManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
                     String cameraId = null;

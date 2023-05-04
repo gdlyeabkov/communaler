@@ -48,22 +48,6 @@ public class ContactsListFragment extends Fragment {
         ArrayAdapter adapter = ArrayAdapter.createFromResource(parentActivity, R.array.contacts_list_provider_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         activityContactsListContainerProvider.setAdapter(adapter);
-        /*activityContactsListContainerProvider.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                int position = activityContactsListContainerProvider.getSelectedItemPosition();
-                if (position == 0) {
-                    activityContactsListContainerBodyFirstCompany.setVisibility(visible);
-                    activityContactsListContainerBodySecondCompany.setVisibility(visible);
-                } else if (position == 1) {
-                    activityContactsListContainerBodyFirstCompany.setVisibility(visible);
-                    activityContactsListContainerBodySecondCompany.setVisibility(unvisible);
-                } else if (position == 1) {
-                    activityContactsListContainerBodyFirstCompany.setVisibility(unvisible);
-                    activityContactsListContainerBodySecondCompany.setVisibility(visible);
-                }
-            }
-        });*/
         activityContactsListContainerProvider.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
@@ -82,7 +66,6 @@ public class ContactsListFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
-                // your code here
             }
 
         });

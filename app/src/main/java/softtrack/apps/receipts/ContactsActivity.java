@@ -82,7 +82,6 @@ public class ContactsActivity extends AppCompatActivity {
         alert.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialogInterface) {
-//                Intent intent = new Intent(Intent.ACTION_DIAL, ContactsContract.Contacts.CONTENT_URI);
                 Uri u = Uri.parse("tel:" + "84995509550");
                 Intent intent = new Intent(Intent.ACTION_DIAL, u);
                 startActivityForResult(intent, 0);

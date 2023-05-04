@@ -32,7 +32,6 @@ public class ViewStateAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        // Hardcoded, use lists
         return 5;
     }
 }

@@ -56,38 +56,12 @@ public class ServicesFragment extends Fragment {
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
             }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-        servicesCurrentTab.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-
             }
         });
     }
-
-/*    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.activity_services_actions, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int itemId = item.getItemId();
-        boolean isSaveMenuItem = itemId == R.id.activity_services_actions_promocode;
-        if (isSaveMenuItem) {
-            Intent intent = new Intent(parentActivity, PromocodeActivity.class);
-            parentActivity.startActivity(intent);
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
 
 }

@@ -50,16 +50,12 @@ public class PaymentActivity extends AppCompatActivity {
                 CharSequence rawActivityPaymentContainerTotalCostInputContent = activityPaymentContainerTotalCostInput.getText();
                 String activityPaymentContainerTotalCostInputContent = rawActivityPaymentContainerTotalCostInputContent.toString();
                 int cost = Integer.valueOf(activityPaymentContainerTotalCostInputContent);
-                /*Cursor usersCursor = db.rawQuery("Select * from users where _id = " + userId, null);
-                usersCursor.moveToFirst();
-                int currentCost = usersCursor.getInt(12);*/
                 Cursor amountsCursor = db.rawQuery("Select * from amounts where _id = " + amountId, null);
                 amountsCursor.moveToFirst();
                 int currentCost = amountsCursor.getInt(6);
                 int updatedCost = currentCost - cost;
                 ContentValues contentValues = new ContentValues();
                 contentValues.put("cost", updatedCost);
-//                db.update("users", contentValues, "_id = ? ", new String[] { Integer.toString(userId) } );
                 db.update("amounts", contentValues, "_id = ? ", new String[] { Integer.toString(amountId) } );
                 Intent intent = new Intent(PaymentActivity.this, PersonalAreaActivity.class);
                 intent.putExtra("userId", userId);

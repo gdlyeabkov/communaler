@@ -26,7 +26,6 @@ public class ContactsViewStateAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        // Hardcoded, use lists
         return 2;
     }
 

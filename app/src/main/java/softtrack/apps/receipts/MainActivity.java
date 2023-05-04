@@ -50,8 +50,6 @@ public class MainActivity extends AppCompatActivity {
     public void initialize() {
         db = openOrCreateDatabase("communaler.db", SQLiteDatabase.CREATE_IF_NECESSARY, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS amounts (_id INTEGER PRIMARY KEY AUTOINCREMENT, provider TEXT, number TEXT, status TEXT, email INTEGER, datetime TEXT, cost INTEGER, user INTEGER);");
-//        db.execSQL("CREATE TABLE IF NOT EXISTS users (_id INTEGER PRIMARY KEY AUTOINCREMENT, login TEXT, password TEXT, address TEXT);");
-//        db.execSQL("CREATE TABLE IF NOT EXISTS users (_id INTEGER PRIMARY KEY AUTOINCREMENT, login TEXT, password TEXT, address TEXT, phone TEXT, name TEXT, email INTEGER);");
         db.execSQL("CREATE TABLE IF NOT EXISTS users (_id INTEGER PRIMARY KEY AUTOINCREMENT, login TEXT, password TEXT, address TEXT, phone TEXT, name TEXT, email INTEGER, gender TEXT, firstname TEXT, secondname TEXT, thirdname TEXT, born TEXT);");
         activityMainContainerLoginBtn = findViewById(R.id.activity_main_container_login_btn);
         activityMainContainerLoginField = findViewById(R.id.activity_main_container_login_field);
@@ -128,41 +126,6 @@ public class MainActivity extends AppCompatActivity {
         activityMainContainerNotAccountRowRegisterLabel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-/*                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                LayoutInflater inflater = getLayoutInflater();
-                View dialogView = inflater.inflate(R.layout.activity_register_dialog, null);
-                builder.setView(dialogView);
-                builder.setCancelable(true);
-                builder.setPositiveButton("Зарегестрироваться", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        EditText activityRegisterDialogContainerLoginField = dialogView.findViewById(R.id.activity_register_dialog_container_login_field);
-                        CharSequence activityRegisterDialogContainerLoginFieldContent = activityRegisterDialogContainerLoginField.getText();
-                        String loginFieldContent = activityRegisterDialogContainerLoginFieldContent.toString();
-                        EditText activityRegisterDialogContainerPasswordField = dialogView.findViewById(R.id.activity_register_dialog_container_password_field);
-                        CharSequence activityRegisterDialogContainerPasswordFieldConent = activityRegisterDialogContainerPasswordField.getText();
-                        String passwordFieldContent = activityRegisterDialogContainerPasswordFieldConent.toString();
-                        EditText activityRegisterDialogContainerAddressField = dialogView.findViewById(R.id.activity_register_dialog_container_address_field);
-                        CharSequence activityRegisterDialogContainerAddressFieldContent = activityRegisterDialogContainerAddressField.getText();
-                        String addressFieldContent = activityRegisterDialogContainerAddressFieldContent.toString();
-                        db.execSQL("INSERT INTO \"users\"(login, password, address) VALUES (\"" + loginFieldContent + "\", \"" + passwordFieldContent + "\", \"" + addressFieldContent + "\");");
-                        Cursor usersCursor = db.rawQuery("Select * from users", null);
-                        usersCursor.moveToLast();
-                        int userId = usersCursor.getInt(0);
-                        Intent intent = new Intent(MainActivity.this, PersonalAreaActivity.class);
-                        intent.putExtra("userId", userId);
-                        MainActivity.this.startActivity(intent);
-                    }
-                });
-                builder.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                    }
-                });
-                AlertDialog alert = builder.create();
-                alert.setTitle("Регистрация");
-                alert.show();*/
                 Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
                 MainActivity.this.startActivity(intent);
             }
